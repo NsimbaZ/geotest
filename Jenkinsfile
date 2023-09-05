@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    atages{
+    stages{
     stage('hello'){
         steps{
             sh 'echo hello'
