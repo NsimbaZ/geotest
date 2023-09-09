@@ -4,7 +4,7 @@ pipeline{
         maven 'M2_HOME'
     }
     environment{
-        nexus_url = '198.58.119.40:8081'
+        nexus_url = 'http://198.58.119.40:8081/repository/NsimbaZ-repo/'
     }
     stages{
     stage('maven clean'){
@@ -24,7 +24,7 @@ pipeline{
     }
     stage('push to Nexus'){
         steps{
-            sh 'curl --upload-file target/bioMedical-0.0.3-SNAPSHOT.jar -u admin:devops -v http://198.58.119.40:8081/repository/NsimbaZ-repo/'
+            sh 'curl --upload-file target/bioMedical-0.0.4-SNAPSHOT.jar -u admin:devops -v ${env.nexus_url}'
         }
     }
 }// end of stages
