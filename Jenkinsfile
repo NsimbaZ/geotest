@@ -24,7 +24,7 @@ pipeline{
     }
     stage('push to Nexus'){
         steps{
-            sh 'curl --upload-file target/bioMedical-0.0.4-SNAPSHOT.jar -u admin:devops -v ${env.nexus_url}'
+            sh 'curl --upload-file target/bioMedical-0.0.4-SNAPSHOT.jar -u admin:devops -v ${nexus_url}'
         }
     }
 }// end of stages
