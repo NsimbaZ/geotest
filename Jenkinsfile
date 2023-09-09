@@ -22,10 +22,5 @@ pipeline{
             sh 'mvn package'
         }
     }
-    stage(){
-        steps{
-            sh 'curl --upload-file my.zip -u admin:admin123 -v http://localhost:8081/nexus/service/local/repositories/releases/content-compressed/foo/bar'
-        }
-    }
 }// end of stages
 }//end of pipeline
