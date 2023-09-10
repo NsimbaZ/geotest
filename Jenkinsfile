@@ -32,7 +32,7 @@ pipeline{
             type: 'jar']], 
             credentialsId: 'ssh-agent-ID', 
             groupId: 'qa', 
-            nexusUrl: '198.58.119.40:8081/', 
+            nexusUrl: '198.58.119.40:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: 'NsimbaZ-repo', 
