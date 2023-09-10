@@ -36,7 +36,7 @@ pipeline{
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: 'NsimbaZ-repo', 
-            version: '0.0.6'
+            version: '0.0.6-SNAPSHOT'
         }
     }
 }// end of stages
