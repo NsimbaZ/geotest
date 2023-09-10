@@ -4,7 +4,7 @@ pipeline{
         maven 'M2_HOME'
     }
     environment{
-        artifact = 'target/bioMedical-0.0.5-SNAPSHOT.jar'
+        artifact = 'target/bioMedical-0.0.6-SNAPSHOT.jar'
         user_login = 'admin:devops'
         nexus_url = 'http://198.58.119.40:8081/repository/NsimbaZ-repo/'
     }
@@ -26,7 +26,17 @@ pipeline{
     }
     stage('push to Nexus'){
         steps{
-            sh 'curl --upload-file ${artifact} -u ${user_login} -v ${nexus_url}'
+            nexusArtifactUploader artifacts: [[artifactId: 'bioMedical', 
+            classifier: '', 
+            file: 'target/bioMedical-0.0.6-SNAPSHOT.jar', 
+            type: 'jar']], 
+            credentialsId: 'ssh-agent-ID', 
+            groupId: 'qa', 
+            nexusUrl: '198.58.119.40:8081/repository/NsimbaZ-repo/', 
+            nexusVersion: 'nexus3', 
+            protocol: 'http', 
+            repository: 'NsimbaZ-repo', 
+            version: '0.0.6'
         }
     }
 }// end of stages
