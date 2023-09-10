@@ -30,7 +30,7 @@ pipeline{
             classifier: '', 
             file: 'target/bioMedical-0.0.6-SNAPSHOT.jar', 
             type: 'jar']], 
-            credentialsId: 'ssh-agent-ID', 
+            credentialsId: 'nexusID', 
             groupId: 'qa', 
             nexusUrl: '198.58.119.40:8081', 
             nexusVersion: 'nexus3', 
